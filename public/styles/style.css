@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alata&family=Assistant:wght@600&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+:root{
+  /*colors*/
+  --white: #FFFEFF;
+  --picton-blue: #02A9EA;
+  --yellow: #FAFF00;
+  --black: #000300;
+  /*fonts*/
+  --font-family-1: 'Abril Fatface', cursive;
+  --font-family-2: 'Alata', sans-serif;
+  --font-family-3: 'Assistant', sans-serif;
+  --font-family-4: 'Atkinson Hyperlegible', sans-serif;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
