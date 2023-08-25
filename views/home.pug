@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/styles/style.css')
+    title ListLoom
+  body
+    .main
+      .welcoming
+        h1#wel Welcome to ListLoom Your Ultimate Todo List Companion!
+        p#paraghraph
+          | We're thrilled to have you here. Whether you're a busy professional, a dedicated student, or simply someone who loves staying organized, you've come to the right place. Our platform is designed to make your life simpler, more productive, and well-organized.
+      .todo_list
+        h1#to To-Do List
+        form(action='/addTask', method='POST')
+          label(for='tsk')
+          input#tsk(type='text', name='tsk', placeholder='Add task')
+          button#add_btn(type='submit') Add
+        .tasks
+          each task in tasks
+            .task
+              p= task
+              .btnn
+                form(action='/deleteTask', method='POST')
+                  input(type='hidden', name='taskToDelete', value=task)
+                  button.delete-btn(type='submit') Delete
+
+                form(action='/markDone', method='POST')
+                  input(type='hidden', name='taskToMarkDone', value=task)
+                  button.done-btn(type='submit') Done
+      .done_list
+        h1 Done List
+        .tasks-done
+          each doneTask in doneTasks
+            .task-done
+              p= doneTask
+              form(action='/deleteDoneTask', method='POST')
+                input(type='hidden', name='doneTaskToDelete', value=doneTask)
+                button.delete-btn(type='submit') Delete
