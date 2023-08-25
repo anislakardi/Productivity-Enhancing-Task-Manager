@@ -4,7 +4,7 @@
   /*colors*/
   --white: #FFFEFF;
   --picton-blue: #02A9EA;
-  --yellow: #FB4B54;
+  --pink: #FB4B54;
   --black: #000300;
   --fuchsia:#1F487E;
   /*fonts*/
@@ -31,10 +31,7 @@ body{
  margin-bottom: 30px;
  height: auto;
 }
-img{
-  width: 50px;
-  height: 50px;
-}
+
 .welcoming{
   background-image: url(/images/pattern-randomized.svg);
   background-size: cover;
@@ -45,18 +42,18 @@ img{
   border-radius: 30px;
 }
 .todo_list {
-  background-color: var(--yellow);
+  background-color: var(--pink);
   height: 90vh;
   border-radius: 30px;
   font-family: var(--font-family-2);
   color: var(--black);
-  overflow-y: scroll; /* Always show a scroll bar */
-  scrollbar-width: none; /* Hide the scrollbar on Firefox */
-  -ms-overflow-style: none; /* Hide the scrollbar on IE and Edge */
+  overflow-y: scroll; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
 }
 
 .todo_list::-webkit-scrollbar {
-  width: 0; /* Hide the scrollbar on Chrome and Safari */
+  width: 0;
 }
 .done_list{
   background-color: var(--picton-blue);
@@ -65,11 +62,11 @@ img{
   font-family: var(--font-family-2);
   color: var(--white);
   overflow-y: auto;
-  scrollbar-width: none; /* Hide the scrollbar on Firefox */
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .done_list::-webkit-scrollbar {
-  width: 0; /* Hide the scrollbar on Chrome and Safari */
+  width: 0; 
 }
 #wel{
   font-family: var(--font-family-2);
@@ -115,31 +112,9 @@ h1{
   margin-right: -10px;
   margin-left: 3px;
 }
-.tasssk{
-  display: grid;
-}
-#task_created {
-  display: block;
-  border: 0px;
-  border-radius: 20px;
-  margin-left: 10px;
-  background-color: white;
-  overflow: auto; /* Use 'auto' to add scrollbars if content overflows */
-  padding: 1px 3px 1px 3px;
-  margin-bottom: auto;
-  margin-top: 20px;
-  max-width: 230px;
-  height: auto; /* Let the height adjust automatically */
-}
-#task_created p {
-  padding-right: 10px;
-  margin-right: 10px;
-  word-wrap: break-word; /* Wrap long words to prevent overflowing */
-}
 .tasks {
   margin-top: 20px;
 }
-
 .task {
   display: flex;
   justify-content: space-between;
@@ -160,7 +135,7 @@ margin: 0px;
 }
 
 .tasks-done {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .task-done {
@@ -177,20 +152,6 @@ margin: 0px;
   border-radius: 20px;
   text-indent:10px;
   margin-left:10px;
-}
-.completed-tasks {
-  margin-top: 20px;
-}
-
-.completed-tasks .task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  background-color: var(--yellow);
-  color: #FFF;
-  padding: 5px;
-  border-radius: 5px;
 }
 .delete-btn{
   border: 0px;
@@ -250,5 +211,22 @@ margin: 0px;
   .task-done {
     width: 375px;
   }
-  
+}
+@media screen and (max-width: 412px){
+
+.todo_list {
+ margin-top: -100px;
+}
+.done_list {
+ margin-top: -350px;
+}
+#tsk{
+  width: 290px;
+}
+.task{
+  width: 355px;
+}
+.task-done {
+  width: 355px;
+}
 }

@@ -1,27 +1,26 @@
 const express = require('express');
-const bodyParser = require('body-parser'); // Import body-parser
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 const pug = require('pug');
-const tasks = []; // Array to store tasks
-const doneTasks = []; // Array to store completed tasks
+const tasks = [];
+const doneTasks = []; 
  
-// Configure app
+
 app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views', './views');
-app.use(bodyParser.urlencoded({ extended: true })); // Use body-parser
+app.use(bodyParser.urlencoded({ extended: true })); 
 
-// Define routes
 app.get('/', (req, res) => {
-  res.render('home', { tasks, doneTasks }); // Pass tasks and doneTasks arrays to the view
+  res.render('home', { tasks, doneTasks }); 
 });
 
 
 app.post('/addTask', (req, res) => {
-  const newTask = req.body.tsk; // Get task from form data
-  tasks.push(newTask); // Add task to tasks array
-  res.redirect('/'); // Redirect back to the home page
+  const newTask = req.body.tsk;
+  tasks.push(newTask); 
+  res.redirect('/'); 
 });
 
 app.post('/deleteTask', (req, res) => {
@@ -38,7 +37,7 @@ app.post('/markDone', (req, res) => {
   
   if (taskIndex !== -1) {
     tasks.splice(taskIndex, 1);
-    doneTasks.push(taskToMarkDone); // Add completed task to doneTasks
+    doneTasks.push(taskToMarkDone); 
   }
   
   res.redirect('/');
@@ -54,7 +53,7 @@ app.post('/deleteDoneTask', (req, res) => {
   res.redirect('/');
 });
 
-// Start the server
+// start server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
